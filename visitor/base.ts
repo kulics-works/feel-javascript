@@ -4,11 +4,11 @@ import * as parser from '../parser/LiteParser';
 
 class LiteLangVisitor extends AbstractParseTreeVisitor<any> implements LiteParserVisitor<any> {
 
-    defaultResult() {
+    defaultResult(): number {
         return 0;
     }
 
-    aggregateResult(aggregate: number, nextResult: number) {
+    aggregateResult(aggregate: number, nextResult: number): number {
         return aggregate + nextResult;
     }
 
@@ -16,7 +16,7 @@ class LiteLangVisitor extends AbstractParseTreeVisitor<any> implements LiteParse
         return 0;
     }
 
-    visitStatement(context: parser.StatementContext): any {
+    visitStatement(ctx: parser.StatementContext): any {
         return 0;
     }
 }
