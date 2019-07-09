@@ -1,0 +1,18 @@
+{
+  "name": "lite-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "author": "kulics",
+  "license": "MIT",
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.3"
+  },
+  "devDependencies": {
+    "antlr4ts-cli": "^0.5.0-alpha.3"
+  },
+  "scripts": {
+    "main": "",
+    "antlr4ts-lexer": "antlr4ts -visitor -no-listener ./parser/LiteLexer.g4",
+    "antlr4ts-parser": "antlr4ts -visitor -no-listener ./parser/LiteParser.g4"
+  }
+}
