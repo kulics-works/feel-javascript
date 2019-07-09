@@ -11,8 +11,8 @@
     "antlr4ts-cli": "^0.5.0-alpha.3"
   },
   "scripts": {
-    "main": "",
-    "antlr4ts-lexer": "antlr4ts -visitor -no-listener ./parser/LiteLexer.g4",
-    "antlr4ts-parser": "antlr4ts -visitor -no-listener ./parser/LiteParser.g4"
+    "main": "node dist/main.js",
+    "lexer": "antlr4ts -visitor -no-listener ./src/parser/LiteLexer.g4",
+    "parser": "antlr4ts -visitor -no-listener ./src/parser/LiteParser.g4"
   }
 }
