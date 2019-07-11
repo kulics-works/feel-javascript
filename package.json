@@ -1,18 +1,25 @@
 {
-  "name": "lite-typescript",
+  "name": "xsjs",
   "version": "1.0.0",
   "description": "",
-  "author": "kulics",
-  "license": "MIT",
-  "dependencies": {
-    "antlr4ts": "^0.5.0-alpha.3"
+  "main": "index.js",
+  "scripts": {
+    "lexer": "antlr4ts -visitor src/compiler/LiteLexer.g4 -o src/compiler/generate -Xexact-output-dir",
+    "parser": "antlr4ts -visitor src/compiler/LiteParser.g4 -o src/compiler/generate -Xexact-output-dir",
+    "ts": "tsc",
+    "watch": "tsc -watch",
+    "start": "node dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
+    "@types/node": "^11.13.8",
     "antlr4ts-cli": "^0.5.0-alpha.3"
   },
-  "scripts": {
-    "main": "node dist/main.js",
-    "lexer": "antlr4ts -visitor -no-listener ./src/parser/LiteLexer.g4",
-    "parser": "antlr4ts -visitor -no-listener ./src/parser/LiteParser.g4"
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.3",
+    "js-yaml": "^3.13.1",
+    "mkdirp": "^0.5.1"
   }
 }

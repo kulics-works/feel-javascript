@@ -1,4 +1,4 @@
-// Generated from ./src/parser/LiteParser.g4 by ANTLR 4.7.3-SNAPSHOT
+// Generated from src/compiler/LiteParser.g4 by ANTLR 4.7.3-SNAPSHOT
 
 
 import { ATN } from "antlr4ts/atn/ATN";
@@ -23,6 +23,7 @@ import { VocabularyImpl } from "antlr4ts/VocabularyImpl";
 
 import * as Utils from "antlr4ts/misc/Utils";
 
+import { LiteParserListener } from "./LiteParserListener";
 import { LiteParserVisitor } from "./LiteParserVisitor";
 
 
@@ -9960,6 +9961,18 @@ export class ProgramContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_program; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterProgram) {
+			listener.enterProgram(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitProgram) {
+			listener.exitProgram(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitProgram) {
 			return visitor.visitProgram(this);
@@ -10000,6 +10013,18 @@ export class StatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_statement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterStatement) {
+			listener.enterStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitStatement) {
+			listener.exitStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitStatement) {
@@ -10046,6 +10071,18 @@ export class ExportStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_exportStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterExportStatement) {
+			listener.enterExportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitExportStatement) {
+			listener.exitExportStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitExportStatement) {
 			return visitor.visitExportStatement(this);
@@ -10075,6 +10112,18 @@ export class ImportStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_importStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterImportStatement) {
+			listener.enterImportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitImportStatement) {
+			listener.exitImportStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitImportStatement) {
@@ -10130,6 +10179,18 @@ export class NamespaceSupportStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_namespaceSupportStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNamespaceSupportStatement) {
+			listener.enterNamespaceSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNamespaceSupportStatement) {
+			listener.exitNamespaceSupportStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNamespaceSupportStatement) {
 			return visitor.visitNamespaceSupportStatement(this);
@@ -10157,6 +10218,18 @@ export class TypeAliasStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeAliasStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeAliasStatement) {
+			listener.enterTypeAliasStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeAliasStatement) {
+			listener.exitTypeAliasStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeAliasStatement) {
 			return visitor.visitTypeAliasStatement(this);
@@ -10183,6 +10256,18 @@ export class TypeRedefineStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeRedefineStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeRedefineStatement) {
+			listener.enterTypeRedefineStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeRedefineStatement) {
+			listener.exitTypeRedefineStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeRedefineStatement) {
@@ -10238,6 +10323,18 @@ export class EnumStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_enumStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterEnumStatement) {
+			listener.enterEnumStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitEnumStatement) {
+			listener.exitEnumStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitEnumStatement) {
 			return visitor.visitEnumStatement(this);
@@ -10267,6 +10364,18 @@ export class EnumSupportStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_enumSupportStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterEnumSupportStatement) {
+			listener.enterEnumSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitEnumSupportStatement) {
+			listener.exitEnumSupportStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitEnumSupportStatement) {
@@ -10302,6 +10411,18 @@ export class NamespaceVariableStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_namespaceVariableStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNamespaceVariableStatement) {
+			listener.enterNamespaceVariableStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNamespaceVariableStatement) {
+			listener.exitNamespaceVariableStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNamespaceVariableStatement) {
@@ -10347,6 +10468,18 @@ export class NamespaceControlStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_namespaceControlStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNamespaceControlStatement) {
+			listener.enterNamespaceControlStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNamespaceControlStatement) {
+			listener.exitNamespaceControlStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNamespaceControlStatement) {
 			return visitor.visitNamespaceControlStatement(this);
@@ -10388,6 +10521,18 @@ export class NamespaceConstantStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_namespaceConstantStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNamespaceConstantStatement) {
+			listener.enterNamespaceConstantStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNamespaceConstantStatement) {
+			listener.exitNamespaceConstantStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNamespaceConstantStatement) {
@@ -10451,6 +10596,18 @@ export class NamespaceFunctionStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_namespaceFunctionStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNamespaceFunctionStatement) {
+			listener.enterNamespaceFunctionStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNamespaceFunctionStatement) {
+			listener.exitNamespaceFunctionStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNamespaceFunctionStatement) {
 			return visitor.visitNamespaceFunctionStatement(this);
@@ -10496,6 +10653,18 @@ export class PackageStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_packageStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPackageStatement) {
+			listener.enterPackageStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPackageStatement) {
+			listener.exitPackageStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPackageStatement) {
 			return visitor.visitPackageStatement(this);
@@ -10523,6 +10692,18 @@ export class PackageSupportStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_packageSupportStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPackageSupportStatement) {
+			listener.enterPackageSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPackageSupportStatement) {
+			listener.exitPackageSupportStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPackageSupportStatement) {
 			return visitor.visitPackageSupportStatement(this);
@@ -10546,6 +10727,18 @@ export class IncludeStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_includeStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterIncludeStatement) {
+			listener.enterIncludeStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitIncludeStatement) {
+			listener.exitIncludeStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitIncludeStatement) {
@@ -10599,6 +10792,18 @@ export class PackageNewStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_packageNewStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPackageNewStatement) {
+			listener.enterPackageNewStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPackageNewStatement) {
+			listener.exitPackageNewStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPackageNewStatement) {
 			return visitor.visitPackageNewStatement(this);
@@ -10633,6 +10838,18 @@ export class PackageVariableStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_packageVariableStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPackageVariableStatement) {
+			listener.enterPackageVariableStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPackageVariableStatement) {
+			listener.exitPackageVariableStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPackageVariableStatement) {
@@ -10681,6 +10898,18 @@ export class PackageControlSubStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_packageControlSubStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPackageControlSubStatement) {
+			listener.enterPackageControlSubStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPackageControlSubStatement) {
+			listener.exitPackageControlSubStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPackageControlSubStatement) {
 			return visitor.visitPackageControlSubStatement(this);
@@ -10714,6 +10943,18 @@ export class PackageEventStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_packageEventStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPackageEventStatement) {
+			listener.enterPackageEventStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPackageEventStatement) {
+			listener.exitPackageEventStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPackageEventStatement) {
@@ -10766,6 +11007,18 @@ export class ImplementStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_implementStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterImplementStatement) {
+			listener.enterImplementStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitImplementStatement) {
+			listener.exitImplementStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitImplementStatement) {
 			return visitor.visitImplementStatement(this);
@@ -10789,6 +11042,18 @@ export class ImplementSupportStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_implementSupportStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterImplementSupportStatement) {
+			listener.enterImplementSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitImplementSupportStatement) {
+			listener.exitImplementSupportStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitImplementSupportStatement) {
@@ -10854,6 +11119,18 @@ export class ImplementFunctionStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_implementFunctionStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterImplementFunctionStatement) {
+			listener.enterImplementFunctionStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitImplementFunctionStatement) {
+			listener.exitImplementFunctionStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitImplementFunctionStatement) {
 			return visitor.visitImplementFunctionStatement(this);
@@ -10895,6 +11172,18 @@ export class ImplementControlStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_implementControlStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterImplementControlStatement) {
+			listener.enterImplementControlStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitImplementControlStatement) {
+			listener.exitImplementControlStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitImplementControlStatement) {
@@ -10953,6 +11242,18 @@ export class OverrideStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_overrideStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterOverrideStatement) {
+			listener.enterOverrideStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitOverrideStatement) {
+			listener.exitOverrideStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitOverrideStatement) {
 			return visitor.visitOverrideStatement(this);
@@ -10976,6 +11277,18 @@ export class OverrideSupportStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_overrideSupportStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterOverrideSupportStatement) {
+			listener.enterOverrideSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitOverrideSupportStatement) {
+			listener.exitOverrideSupportStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitOverrideSupportStatement) {
@@ -11041,6 +11354,18 @@ export class OverrideFunctionStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_overrideFunctionStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterOverrideFunctionStatement) {
+			listener.enterOverrideFunctionStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitOverrideFunctionStatement) {
+			listener.exitOverrideFunctionStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitOverrideFunctionStatement) {
 			return visitor.visitOverrideFunctionStatement(this);
@@ -11082,6 +11407,18 @@ export class OverrideControlStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_overrideControlStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterOverrideControlStatement) {
+			listener.enterOverrideControlStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitOverrideControlStatement) {
+			listener.exitOverrideControlStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitOverrideControlStatement) {
@@ -11128,6 +11465,18 @@ export class ProtocolStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_protocolStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterProtocolStatement) {
+			listener.enterProtocolStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitProtocolStatement) {
+			listener.exitProtocolStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitProtocolStatement) {
 			return visitor.visitProtocolStatement(this);
@@ -11154,6 +11503,18 @@ export class ProtocolSupportStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_protocolSupportStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterProtocolSupportStatement) {
+			listener.enterProtocolSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitProtocolSupportStatement) {
+			listener.exitProtocolSupportStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitProtocolSupportStatement) {
@@ -11204,6 +11565,18 @@ export class ProtocolControlStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_protocolControlStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterProtocolControlStatement) {
+			listener.enterProtocolControlStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitProtocolControlStatement) {
+			listener.exitProtocolControlStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitProtocolControlStatement) {
 			return visitor.visitProtocolControlStatement(this);
@@ -11223,6 +11596,18 @@ export class ProtocolControlSubStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_protocolControlSubStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterProtocolControlSubStatement) {
+			listener.enterProtocolControlSubStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitProtocolControlSubStatement) {
+			listener.exitProtocolControlSubStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitProtocolControlSubStatement) {
@@ -11270,6 +11655,18 @@ export class ProtocolFunctionStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_protocolFunctionStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterProtocolFunctionStatement) {
+			listener.enterProtocolFunctionStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitProtocolFunctionStatement) {
+			listener.exitProtocolFunctionStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitProtocolFunctionStatement) {
@@ -11330,6 +11727,18 @@ export class FunctionStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_functionStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterFunctionStatement) {
+			listener.enterFunctionStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitFunctionStatement) {
+			listener.exitFunctionStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitFunctionStatement) {
 			return visitor.visitFunctionStatement(this);
@@ -11353,6 +11762,18 @@ export class ReturnStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_returnStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterReturnStatement) {
+			listener.enterReturnStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitReturnStatement) {
+			listener.exitReturnStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitReturnStatement) {
@@ -11395,6 +11816,18 @@ export class ParameterClauseInContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_parameterClauseIn; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterParameterClauseIn) {
+			listener.enterParameterClauseIn(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitParameterClauseIn) {
+			listener.exitParameterClauseIn(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitParameterClauseIn) {
 			return visitor.visitParameterClauseIn(this);
@@ -11436,6 +11869,18 @@ export class ParameterClauseOutContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_parameterClauseOut; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterParameterClauseOut) {
+			listener.enterParameterClauseOut(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitParameterClauseOut) {
+			listener.exitParameterClauseOut(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitParameterClauseOut) {
 			return visitor.visitParameterClauseOut(this);
@@ -11465,6 +11910,18 @@ export class ParameterClauseSelfContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_parameterClauseSelf; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterParameterClauseSelf) {
+			listener.enterParameterClauseSelf(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitParameterClauseSelf) {
+			listener.exitParameterClauseSelf(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitParameterClauseSelf) {
@@ -11496,6 +11953,18 @@ export class ParameterContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_parameter; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterParameter) {
+			listener.enterParameter(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitParameter) {
+			listener.exitParameter(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitParameter) {
@@ -11569,6 +12038,18 @@ export class FunctionSupportStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_functionSupportStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterFunctionSupportStatement) {
+			listener.enterFunctionSupportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitFunctionSupportStatement) {
+			listener.exitFunctionSupportStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitFunctionSupportStatement) {
 			return visitor.visitFunctionSupportStatement(this);
@@ -11602,6 +12083,18 @@ export class JudgeCaseStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judgeCaseStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudgeCaseStatement) {
+			listener.enterJudgeCaseStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudgeCaseStatement) {
+			listener.exitJudgeCaseStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudgeCaseStatement) {
 			return visitor.visitJudgeCaseStatement(this);
@@ -11634,6 +12127,18 @@ export class CaseDefaultStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_caseDefaultStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCaseDefaultStatement) {
+			listener.enterCaseDefaultStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCaseDefaultStatement) {
+			listener.exitCaseDefaultStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCaseDefaultStatement) {
@@ -11677,6 +12182,18 @@ export class CaseExprStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_caseExprStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCaseExprStatement) {
+			listener.enterCaseExprStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCaseExprStatement) {
+			listener.exitCaseExprStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCaseExprStatement) {
 			return visitor.visitCaseExprStatement(this);
@@ -11699,6 +12216,18 @@ export class CaseStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_caseStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCaseStatement) {
+			listener.enterCaseStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCaseStatement) {
+			listener.exitCaseStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCaseStatement) {
@@ -11735,6 +12264,18 @@ export class JudgeStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judgeStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudgeStatement) {
+			listener.enterJudgeStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudgeStatement) {
+			listener.exitJudgeStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudgeStatement) {
 			return visitor.visitJudgeStatement(this);
@@ -11767,6 +12308,18 @@ export class JudgeElseStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judgeElseStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudgeElseStatement) {
+			listener.enterJudgeElseStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudgeElseStatement) {
+			listener.exitJudgeElseStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudgeElseStatement) {
@@ -11804,6 +12357,18 @@ export class JudgeIfStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judgeIfStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudgeIfStatement) {
+			listener.enterJudgeIfStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudgeIfStatement) {
+			listener.exitJudgeIfStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudgeIfStatement) {
 			return visitor.visitJudgeIfStatement(this);
@@ -11838,6 +12403,18 @@ export class JudgeElseIfStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judgeElseIfStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudgeElseIfStatement) {
+			listener.enterJudgeElseIfStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudgeElseIfStatement) {
+			listener.exitJudgeElseIfStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudgeElseIfStatement) {
@@ -11880,6 +12457,18 @@ export class LoopStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_loopStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLoopStatement) {
+			listener.enterLoopStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLoopStatement) {
+			listener.exitLoopStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLoopStatement) {
@@ -11931,6 +12520,18 @@ export class LoopEachStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_loopEachStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLoopEachStatement) {
+			listener.enterLoopEachStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLoopEachStatement) {
+			listener.exitLoopEachStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLoopEachStatement) {
 			return visitor.visitLoopEachStatement(this);
@@ -11970,6 +12571,18 @@ export class LoopCaseStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_loopCaseStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLoopCaseStatement) {
+			listener.enterLoopCaseStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLoopCaseStatement) {
+			listener.exitLoopCaseStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLoopCaseStatement) {
 			return visitor.visitLoopCaseStatement(this);
@@ -12006,6 +12619,18 @@ export class LoopInfiniteStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_loopInfiniteStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLoopInfiniteStatement) {
+			listener.enterLoopInfiniteStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLoopInfiniteStatement) {
+			listener.exitLoopInfiniteStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLoopInfiniteStatement) {
 			return visitor.visitLoopInfiniteStatement(this);
@@ -12028,6 +12653,18 @@ export class LoopJumpStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_loopJumpStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLoopJumpStatement) {
+			listener.enterLoopJumpStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLoopJumpStatement) {
+			listener.exitLoopJumpStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLoopJumpStatement) {
 			return visitor.visitLoopJumpStatement(this);
@@ -12049,6 +12686,18 @@ export class LoopContinueStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_loopContinueStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLoopContinueStatement) {
+			listener.enterLoopContinueStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLoopContinueStatement) {
+			listener.exitLoopContinueStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLoopContinueStatement) {
@@ -12098,6 +12747,18 @@ export class CheckStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_checkStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCheckStatement) {
+			listener.enterCheckStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCheckStatement) {
+			listener.exitCheckStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCheckStatement) {
 			return visitor.visitCheckStatement(this);
@@ -12131,6 +12792,18 @@ export class UsingStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_usingStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterUsingStatement) {
+			listener.enterUsingStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitUsingStatement) {
+			listener.exitUsingStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitUsingStatement) {
@@ -12171,6 +12844,18 @@ export class CheckErrorStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_checkErrorStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCheckErrorStatement) {
+			listener.enterCheckErrorStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCheckErrorStatement) {
+			listener.exitCheckErrorStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCheckErrorStatement) {
 			return visitor.visitCheckErrorStatement(this);
@@ -12204,6 +12889,18 @@ export class CheckFinallyStatmentContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_checkFinallyStatment; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCheckFinallyStatment) {
+			listener.enterCheckFinallyStatment(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCheckFinallyStatment) {
+			listener.exitCheckFinallyStatment(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCheckFinallyStatment) {
 			return visitor.visitCheckFinallyStatment(this);
@@ -12233,6 +12930,18 @@ export class ReportStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_reportStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterReportStatement) {
+			listener.enterReportStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitReportStatement) {
+			listener.exitReportStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitReportStatement) {
@@ -12270,6 +12979,18 @@ export class IteratorStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_iteratorStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterIteratorStatement) {
+			listener.enterIteratorStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitIteratorStatement) {
+			listener.exitIteratorStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitIteratorStatement) {
 			return visitor.visitIteratorStatement(this);
@@ -12305,6 +13026,18 @@ export class VariableStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_variableStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterVariableStatement) {
+			listener.enterVariableStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitVariableStatement) {
+			listener.exitVariableStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitVariableStatement) {
 			return visitor.visitVariableStatement(this);
@@ -12331,6 +13064,18 @@ export class VariableDeclaredStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_variableDeclaredStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterVariableDeclaredStatement) {
+			listener.enterVariableDeclaredStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitVariableDeclaredStatement) {
+			listener.exitVariableDeclaredStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitVariableDeclaredStatement) {
@@ -12367,6 +13112,18 @@ export class ChannelAssignStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_channelAssignStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterChannelAssignStatement) {
+			listener.enterChannelAssignStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitChannelAssignStatement) {
+			listener.exitChannelAssignStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitChannelAssignStatement) {
 			return visitor.visitChannelAssignStatement(this);
@@ -12399,6 +13156,18 @@ export class AssignStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_assignStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAssignStatement) {
+			listener.enterAssignStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAssignStatement) {
+			listener.exitAssignStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAssignStatement) {
 			return visitor.visitAssignStatement(this);
@@ -12421,6 +13190,18 @@ export class ExpressionStatementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_expressionStatement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterExpressionStatement) {
+			listener.enterExpressionStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitExpressionStatement) {
+			listener.exitExpressionStatement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitExpressionStatement) {
@@ -12458,6 +13239,18 @@ export class PrimaryExpressionContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_primaryExpression; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPrimaryExpression) {
+			listener.enterPrimaryExpression(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPrimaryExpression) {
+			listener.exitPrimaryExpression(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPrimaryExpression) {
@@ -12573,6 +13366,18 @@ export class ExpressionContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_expression; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterExpression) {
+			listener.enterExpression(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitExpression) {
+			listener.exitExpression(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitExpression) {
 			return visitor.visitExpression(this);
@@ -12615,6 +13420,18 @@ export class CallExpressionContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callExpression; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallExpression) {
+			listener.enterCallExpression(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallExpression) {
+			listener.exitCallExpression(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallExpression) {
 			return visitor.visitCallExpression(this);
@@ -12656,6 +13473,18 @@ export class TupleContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_tuple; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTuple) {
+			listener.enterTuple(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTuple) {
+			listener.exitTuple(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTuple) {
 			return visitor.visitTuple(this);
@@ -12691,6 +13520,18 @@ export class ExpressionListContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_expressionList; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterExpressionList) {
+			listener.enterExpressionList(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitExpressionList) {
+			listener.exitExpressionList(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitExpressionList) {
 			return visitor.visitExpressionList(this);
@@ -12711,6 +13552,18 @@ export class AnnotationSupportContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_annotationSupport; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAnnotationSupport) {
+			listener.enterAnnotationSupport(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAnnotationSupport) {
+			listener.exitAnnotationSupport(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAnnotationSupport) {
@@ -12737,6 +13590,18 @@ export class AnnotationContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_annotation; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAnnotation) {
+			listener.enterAnnotation(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAnnotation) {
+			listener.exitAnnotation(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAnnotation) {
@@ -12772,6 +13637,18 @@ export class AnnotationListContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_annotationList; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAnnotationList) {
+			listener.enterAnnotationList(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAnnotationList) {
+			listener.exitAnnotationList(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAnnotationList) {
@@ -12817,6 +13694,18 @@ export class AnnotationItemContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_annotationItem; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAnnotationItem) {
+			listener.enterAnnotationItem(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAnnotationItem) {
+			listener.exitAnnotationItem(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAnnotationItem) {
 			return visitor.visitAnnotationItem(this);
@@ -12840,6 +13729,18 @@ export class AnnotationAssignContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_annotationAssign; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAnnotationAssign) {
+			listener.enterAnnotationAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAnnotationAssign) {
+			listener.exitAnnotationAssign(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAnnotationAssign) {
@@ -12870,6 +13771,18 @@ export class CallFuncContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callFunc; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallFunc) {
+			listener.enterCallFunc(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallFunc) {
+			listener.exitCallFunc(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallFunc) {
 			return visitor.visitCallFunc(this);
@@ -12894,6 +13807,18 @@ export class CallChannelContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callChannel; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallChannel) {
+			listener.enterCallChannel(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallChannel) {
+			listener.exitCallChannel(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallChannel) {
@@ -12924,6 +13849,18 @@ export class CallElementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callElement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallElement) {
+			listener.enterCallElement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallElement) {
+			listener.exitCallElement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallElement) {
@@ -12962,6 +13899,18 @@ export class CallPkgContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callPkg; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallPkg) {
+			listener.enterCallPkg(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallPkg) {
+			listener.exitCallPkg(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallPkg) {
@@ -13003,6 +13952,18 @@ export class CallNewContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callNew; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallNew) {
+			listener.enterCallNew(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallNew) {
+			listener.exitCallNew(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallNew) {
 			return visitor.visitCallNew(this);
@@ -13034,6 +13995,18 @@ export class GetTypeContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_getType; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterGetType) {
+			listener.enterGetType(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitGetType) {
+			listener.exitGetType(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitGetType) {
 			return visitor.visitGetType(this);
@@ -13060,6 +14033,18 @@ export class TypeConversionContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeConversion; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeConversion) {
+			listener.enterTypeConversion(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeConversion) {
+			listener.exitTypeConversion(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeConversion) {
@@ -13096,6 +14081,18 @@ export class PkgAssignContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_pkgAssign; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPkgAssign) {
+			listener.enterPkgAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPkgAssign) {
+			listener.exitPkgAssign(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPkgAssign) {
 			return visitor.visitPkgAssign(this);
@@ -13119,6 +14116,18 @@ export class PkgAssignElementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_pkgAssignElement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPkgAssignElement) {
+			listener.enterPkgAssignElement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPkgAssignElement) {
+			listener.exitPkgAssignElement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPkgAssignElement) {
@@ -13154,6 +14163,18 @@ export class ListAssignContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_listAssign; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterListAssign) {
+			listener.enterListAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitListAssign) {
+			listener.exitListAssign(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitListAssign) {
@@ -13208,6 +14229,18 @@ export class SetAssignContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_setAssign; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterSetAssign) {
+			listener.enterSetAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitSetAssign) {
+			listener.exitSetAssign(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitSetAssign) {
 			return visitor.visitSetAssign(this);
@@ -13243,6 +14276,18 @@ export class DictionaryAssignContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_dictionaryAssign; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterDictionaryAssign) {
+			listener.enterDictionaryAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitDictionaryAssign) {
+			listener.exitDictionaryAssign(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitDictionaryAssign) {
 			return visitor.visitDictionaryAssign(this);
@@ -13263,6 +14308,18 @@ export class CallAwaitContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_callAwait; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCallAwait) {
+			listener.enterCallAwait(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCallAwait) {
+			listener.exitCallAwait(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCallAwait) {
@@ -13304,6 +14361,18 @@ export class ListContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_list; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterList) {
+			listener.enterList(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitList) {
+			listener.exitList(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitList) {
@@ -13364,6 +14433,18 @@ export class SetContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_set; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterSet) {
+			listener.enterSet(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitSet) {
+			listener.exitSet(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitSet) {
 			return visitor.visitSet(this);
@@ -13405,6 +14486,18 @@ export class DictionaryContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_dictionary; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterDictionary) {
+			listener.enterDictionary(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitDictionary) {
+			listener.exitDictionary(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitDictionary) {
 			return visitor.visitDictionary(this);
@@ -13433,6 +14526,18 @@ export class DictionaryElementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_dictionaryElement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterDictionaryElement) {
+			listener.enterDictionaryElement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitDictionaryElement) {
+			listener.exitDictionaryElement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitDictionaryElement) {
 			return visitor.visitDictionaryElement(this);
@@ -13458,6 +14563,18 @@ export class SliceContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_slice; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterSlice) {
+			listener.enterSlice(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitSlice) {
+			listener.exitSlice(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitSlice) {
@@ -13490,6 +14607,18 @@ export class SliceFullContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_sliceFull; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterSliceFull) {
+			listener.enterSliceFull(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitSliceFull) {
+			listener.exitSliceFull(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitSliceFull) {
 			return visitor.visitSliceFull(this);
@@ -13515,6 +14644,18 @@ export class SliceStartContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_sliceStart; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterSliceStart) {
+			listener.enterSliceStart(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitSliceStart) {
+			listener.exitSliceStart(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitSliceStart) {
 			return visitor.visitSliceStart(this);
@@ -13539,6 +14680,18 @@ export class SliceEndContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_sliceEnd; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterSliceEnd) {
+			listener.enterSliceEnd(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitSliceEnd) {
+			listener.exitSliceEnd(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitSliceEnd) {
@@ -13584,6 +14737,18 @@ export class NameSpaceItemContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_nameSpaceItem; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNameSpaceItem) {
+			listener.enterNameSpaceItem(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNameSpaceItem) {
+			listener.exitNameSpaceItem(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNameSpaceItem) {
 			return visitor.visitNameSpaceItem(this);
@@ -13628,6 +14793,18 @@ export class NameContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_name; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterName) {
+			listener.enterName(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitName) {
+			listener.exitName(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitName) {
 			return visitor.visitName(this);
@@ -13665,6 +14842,18 @@ export class TemplateDefineContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_templateDefine; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTemplateDefine) {
+			listener.enterTemplateDefine(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTemplateDefine) {
+			listener.exitTemplateDefine(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTemplateDefine) {
 			return visitor.visitTemplateDefine(this);
@@ -13691,6 +14880,18 @@ export class TemplateDefineItemContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_templateDefineItem; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTemplateDefineItem) {
+			listener.enterTemplateDefineItem(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTemplateDefineItem) {
+			listener.exitTemplateDefineItem(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTemplateDefineItem) {
@@ -13728,6 +14929,18 @@ export class TemplateCallContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_templateCall; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTemplateCall) {
+			listener.enterTemplateCall(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTemplateCall) {
+			listener.exitTemplateCall(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTemplateCall) {
@@ -13779,6 +14992,18 @@ export class LambdaContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_lambda; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLambda) {
+			listener.enterLambda(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLambda) {
+			listener.exitLambda(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLambda) {
 			return visitor.visitLambda(this);
@@ -13814,6 +15039,18 @@ export class LambdaInContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_lambdaIn; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLambdaIn) {
+			listener.enterLambdaIn(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLambdaIn) {
+			listener.exitLambdaIn(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLambdaIn) {
 			return visitor.visitLambdaIn(this);
@@ -13833,6 +15070,18 @@ export class PkgAnonymousContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_pkgAnonymous; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPkgAnonymous) {
+			listener.enterPkgAnonymous(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPkgAnonymous) {
+			listener.exitPkgAnonymous(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPkgAnonymous) {
@@ -13875,6 +15124,18 @@ export class PkgAnonymousAssignContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_pkgAnonymousAssign; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPkgAnonymousAssign) {
+			listener.enterPkgAnonymousAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPkgAnonymousAssign) {
+			listener.exitPkgAnonymousAssign(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPkgAnonymousAssign) {
 			return visitor.visitPkgAnonymousAssign(this);
@@ -13898,6 +15159,18 @@ export class PkgAnonymousAssignElementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_pkgAnonymousAssignElement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPkgAnonymousAssignElement) {
+			listener.enterPkgAnonymousAssignElement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPkgAnonymousAssignElement) {
+			listener.exitPkgAnonymousAssignElement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPkgAnonymousAssignElement) {
@@ -13949,6 +15222,18 @@ export class FunctionExpressionContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_functionExpression; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterFunctionExpression) {
+			listener.enterFunctionExpression(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitFunctionExpression) {
+			listener.exitFunctionExpression(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitFunctionExpression) {
 			return visitor.visitFunctionExpression(this);
@@ -13990,6 +15275,18 @@ export class TupleExpressionContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_tupleExpression; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTupleExpression) {
+			listener.enterTupleExpression(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTupleExpression) {
+			listener.exitTupleExpression(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTupleExpression) {
 			return visitor.visitTupleExpression(this);
@@ -14013,6 +15310,18 @@ export class PlusMinusContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_plusMinus; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPlusMinus) {
+			listener.enterPlusMinus(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPlusMinus) {
+			listener.exitPlusMinus(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPlusMinus) {
 			return visitor.visitPlusMinus(this);
@@ -14035,6 +15344,18 @@ export class NegateContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_negate; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNegate) {
+			listener.enterNegate(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNegate) {
+			listener.exitNegate(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNegate) {
@@ -14087,6 +15408,18 @@ export class LinqContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_linq; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLinq) {
+			listener.enterLinq(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLinq) {
+			listener.exitLinq(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLinq) {
 			return visitor.visitLinq(this);
@@ -14112,6 +15445,18 @@ export class LinqItemContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_linqItem; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLinqItem) {
+			listener.enterLinqItem(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLinqItem) {
+			listener.exitLinqItem(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLinqItem) {
 			return visitor.visitLinqItem(this);
@@ -14135,6 +15480,18 @@ export class LinqKeywordContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_linqKeyword; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLinqKeyword) {
+			listener.enterLinqKeyword(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLinqKeyword) {
+			listener.exitLinqKeyword(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLinqKeyword) {
 			return visitor.visitLinqKeyword(this);
@@ -14153,6 +15510,18 @@ export class LinqHeadKeywordContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_linqHeadKeyword; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLinqHeadKeyword) {
+			listener.enterLinqHeadKeyword(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLinqHeadKeyword) {
+			listener.exitLinqHeadKeyword(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLinqHeadKeyword) {
@@ -14185,6 +15554,18 @@ export class LinqBodyKeywordContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_linqBodyKeyword; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLinqBodyKeyword) {
+			listener.enterLinqBodyKeyword(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLinqBodyKeyword) {
+			listener.exitLinqBodyKeyword(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLinqBodyKeyword) {
 			return visitor.visitLinqBodyKeyword(this);
@@ -14212,6 +15593,18 @@ export class StringExpressionContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_stringExpression; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterStringExpression) {
+			listener.enterStringExpression(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitStringExpression) {
+			listener.exitStringExpression(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitStringExpression) {
 			return visitor.visitStringExpression(this);
@@ -14232,6 +15625,18 @@ export class StringExpressionElementContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_stringExpressionElement; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterStringExpressionElement) {
+			listener.enterStringExpressionElement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitStringExpressionElement) {
+			listener.exitStringExpressionElement(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitStringExpressionElement) {
@@ -14265,6 +15670,18 @@ export class DataStatementContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_dataStatement; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterDataStatement) {
+			listener.enterDataStatement(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitDataStatement) {
+			listener.exitDataStatement(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitDataStatement) {
 			return visitor.visitDataStatement(this);
@@ -14294,6 +15711,18 @@ export class FloatExprContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_floatExpr; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterFloatExpr) {
+			listener.enterFloatExpr(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitFloatExpr) {
+			listener.exitFloatExpr(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitFloatExpr) {
 			return visitor.visitFloatExpr(this);
@@ -14311,6 +15740,18 @@ export class IntegerExprContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_integerExpr; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterIntegerExpr) {
+			listener.enterIntegerExpr(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitIntegerExpr) {
+			listener.exitIntegerExpr(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitIntegerExpr) {
@@ -14359,6 +15800,18 @@ export class TypeNotNullContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeNotNull; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeNotNull) {
+			listener.enterTypeNotNull(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeNotNull) {
+			listener.exitTypeNotNull(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeNotNull) {
 			return visitor.visitTypeNotNull(this);
@@ -14383,6 +15836,18 @@ export class TypeReferenceContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeReference; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeReference) {
+			listener.enterTypeReference(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeReference) {
+			listener.exitTypeReference(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeReference) {
 			return visitor.visitTypeReference(this);
@@ -14403,6 +15868,18 @@ export class TypeNullableContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeNullable; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeNullable) {
+			listener.enterTypeNullable(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeNullable) {
+			listener.exitTypeNullable(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeNullable) {
@@ -14429,6 +15906,18 @@ export class TypeTypeContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeType; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeType) {
+			listener.enterTypeType(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeType) {
+			listener.exitTypeType(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeType) {
@@ -14471,6 +15960,18 @@ export class TypeTupleContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeTuple; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeTuple) {
+			listener.enterTypeTuple(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeTuple) {
+			listener.exitTypeTuple(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeTuple) {
 			return visitor.visitTypeTuple(this);
@@ -14494,6 +15995,18 @@ export class TypeArrayContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeArray; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeArray) {
+			listener.enterTypeArray(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeArray) {
+			listener.exitTypeArray(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeArray) {
 			return visitor.visitTypeArray(this);
@@ -14516,6 +16029,18 @@ export class TypeListContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeList; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeList) {
+			listener.enterTypeList(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeList) {
+			listener.exitTypeList(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeList) {
 			return visitor.visitTypeList(this);
@@ -14537,6 +16062,18 @@ export class TypeSetContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeSet; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeSet) {
+			listener.enterTypeSet(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeSet) {
+			listener.exitTypeSet(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeSet) {
@@ -14566,6 +16103,18 @@ export class TypeDictionaryContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeDictionary; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeDictionary) {
+			listener.enterTypeDictionary(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeDictionary) {
+			listener.exitTypeDictionary(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeDictionary) {
 			return visitor.visitTypeDictionary(this);
@@ -14589,6 +16138,18 @@ export class TypeChannelContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeChannel; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeChannel) {
+			listener.enterTypeChannel(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeChannel) {
+			listener.exitTypeChannel(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeChannel) {
 			return visitor.visitTypeChannel(this);
@@ -14611,6 +16172,18 @@ export class TypePackageContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typePackage; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypePackage) {
+			listener.enterTypePackage(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypePackage) {
+			listener.exitTypePackage(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypePackage) {
@@ -14650,6 +16223,18 @@ export class TypeFunctionContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeFunction; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeFunction) {
+			listener.enterTypeFunction(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeFunction) {
+			listener.exitTypeFunction(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeFunction) {
 			return visitor.visitTypeFunction(this);
@@ -14667,6 +16252,18 @@ export class TypeAnyContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeAny; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeAny) {
+			listener.enterTypeAny(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeAny) {
+			listener.exitTypeAny(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeAny) {
@@ -14709,6 +16306,18 @@ export class TypeFunctionParameterClauseContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeFunctionParameterClause; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeFunctionParameterClause) {
+			listener.enterTypeFunctionParameterClause(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeFunctionParameterClause) {
+			listener.exitTypeFunctionParameterClause(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeFunctionParameterClause) {
 			return visitor.visitTypeFunctionParameterClause(this);
@@ -14743,6 +16352,18 @@ export class TypeBasicContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_typeBasic; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterTypeBasic) {
+			listener.enterTypeBasic(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitTypeBasic) {
+			listener.exitTypeBasic(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitTypeBasic) {
 			return visitor.visitTypeBasic(this);
@@ -14760,6 +16381,18 @@ export class NilExprContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_nilExpr; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterNilExpr) {
+			listener.enterNilExpr(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitNilExpr) {
+			listener.exitNilExpr(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitNilExpr) {
@@ -14781,6 +16414,18 @@ export class BoolExprContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_boolExpr; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterBoolExpr) {
+			listener.enterBoolExpr(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitBoolExpr) {
+			listener.exitBoolExpr(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitBoolExpr) {
 			return visitor.visitBoolExpr(this);
@@ -14801,6 +16446,18 @@ export class JudgeTypeContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judgeType; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudgeType) {
+			listener.enterJudgeType(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudgeType) {
+			listener.exitJudgeType(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudgeType) {
@@ -14829,6 +16486,18 @@ export class JudgeContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_judge; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterJudge) {
+			listener.enterJudge(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitJudge) {
+			listener.exitJudge(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitJudge) {
 			return visitor.visitJudge(this);
@@ -14854,6 +16523,18 @@ export class AssignContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_assign; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAssign) {
+			listener.enterAssign(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAssign) {
+			listener.exitAssign(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAssign) {
 			return visitor.visitAssign(this);
@@ -14874,6 +16555,18 @@ export class AddContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_add; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterAdd) {
+			listener.enterAdd(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitAdd) {
+			listener.exitAdd(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitAdd) {
@@ -14897,6 +16590,18 @@ export class MulContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_mul; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterMul) {
+			listener.enterMul(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitMul) {
+			listener.exitMul(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitMul) {
 			return visitor.visitMul(this);
@@ -14919,6 +16624,18 @@ export class PowContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_pow; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterPow) {
+			listener.enterPow(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitPow) {
+			listener.exitPow(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitPow) {
 			return visitor.visitPow(this);
@@ -14939,6 +16656,18 @@ export class CallContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_call; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterCall) {
+			listener.enterCall(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitCall) {
+			listener.exitCall(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitCall) {
 			return visitor.visitCall(this);
@@ -14957,6 +16686,18 @@ export class WaveContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_wave; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterWave) {
+			listener.enterWave(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitWave) {
+			listener.exitWave(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitWave) {
@@ -14977,6 +16718,18 @@ export class IdContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_id; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterId) {
+			listener.enterId(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitId) {
+			listener.exitId(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitId) {
@@ -15007,6 +16760,18 @@ export class IdItemContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_idItem; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterIdItem) {
+			listener.enterIdItem(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitIdItem) {
+			listener.exitIdItem(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitIdItem) {
 			return visitor.visitIdItem(this);
@@ -15025,6 +16790,18 @@ export class EndContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_end; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterEnd) {
+			listener.enterEnd(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitEnd) {
+			listener.exitEnd(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitEnd) {
@@ -15053,6 +16830,18 @@ export class MoreContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_more; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterMore) {
+			listener.enterMore(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitMore) {
+			listener.exitMore(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitMore) {
 			return visitor.visitMore(this);
@@ -15079,6 +16868,18 @@ export class Left_braceContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_left_brace; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLeft_brace) {
+			listener.enterLeft_brace(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLeft_brace) {
+			listener.exitLeft_brace(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLeft_brace) {
@@ -15107,6 +16908,18 @@ export class Right_braceContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_right_brace; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterRight_brace) {
+			listener.enterRight_brace(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitRight_brace) {
+			listener.exitRight_brace(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitRight_brace) {
 			return visitor.visitRight_brace(this);
@@ -15125,6 +16938,18 @@ export class Left_parenContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_left_paren; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLeft_paren) {
+			listener.enterLeft_paren(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLeft_paren) {
+			listener.exitLeft_paren(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLeft_paren) {
 			return visitor.visitLeft_paren(this);
@@ -15142,6 +16967,18 @@ export class Right_parenContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_right_paren; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterRight_paren) {
+			listener.enterRight_paren(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitRight_paren) {
+			listener.exitRight_paren(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitRight_paren) {
@@ -15170,6 +17007,18 @@ export class Left_brackContext extends ParserRuleContext {
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_left_brack; }
 	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterLeft_brack) {
+			listener.enterLeft_brack(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitLeft_brack) {
+			listener.exitLeft_brack(this);
+		}
+	}
+	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitLeft_brack) {
 			return visitor.visitLeft_brack(this);
@@ -15196,6 +17045,18 @@ export class Right_brackContext extends ParserRuleContext {
 	}
 	// @Override
 	public get ruleIndex(): number { return LiteParser.RULE_right_brack; }
+	// @Override
+	public enterRule(listener: LiteParserListener): void {
+		if (listener.enterRight_brack) {
+			listener.enterRight_brack(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: LiteParserListener): void {
+		if (listener.exitRight_brack) {
+			listener.exitRight_brack(this);
+		}
+	}
 	// @Override
 	public accept<Result>(visitor: LiteParserVisitor<Result>): Result {
 		if (visitor.visitRight_brack) {
