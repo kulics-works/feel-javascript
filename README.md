@@ -1,10 +1,10 @@
 ## 简介
 
-xsjs，基于[xs]()极简风格的语法，使用 antlr 实现一个 typescript 版本的语法编译器。
+Lite-Typescript，基于[Lite]()极简风格的语法，使用 antlr 实现一个 typescript 版本的语法编译器。
 
 ## 导航
 
-- [xs 语法](/docs/xs.md)
+- [Lite 语法](/docs/lite.md)
 - [antlr 匹配语法](/docs/antlr-match.md)
 
 ## get starting
