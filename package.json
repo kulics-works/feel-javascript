@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lexer": "antlr4ts -visitor src/compiler/LiteLexer.g4 -o src/compiler/generate -Xexact-output-dir",
-    "parser": "antlr4ts -visitor src/compiler/LiteParser.g4 -o src/compiler/generate -Xexact-output-dir",
+    "lexer": "antlr4ts -visitor -no-listener src/compiler/LiteLexer.g4 -o src/compiler/generate -Xexact-output-dir",
+    "parser": "antlr4ts -visitor -no-listener src/compiler/LiteParser.g4 -o src/compiler/generate -Xexact-output-dir",
     "ts": "tsc",
     "watch": "tsc -watch",
     "start": "node dist/",
