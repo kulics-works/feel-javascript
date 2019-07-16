@@ -1,20 +1,24 @@
 import { ANTLRInputStream, CommonTokenStream } from "antlr4ts";
-import { XsjsLexer } from "./compiler/generate/XsjsLexer";
-import { XsjsParser } from "./compiler/generate/XsjsParser";
+import { LiteLexer } from "./compiler/generate/LiteLexer";
+import { LiteParser } from "./compiler/generate/LiteParser";
 
 import { Visitor } from "./parser/visitor";
 // Create the lexer and parser
 const input: string = `
-1+(2+3)
-a= 10
+"demo" {}
+
+main(->) {
+
+}
+
 `;
 let inputStream = new ANTLRInputStream(input);
-let lexer = new XsjsLexer(inputStream);
+let lexer = new LiteLexer(inputStream);
 let tokenStream = new CommonTokenStream(lexer);
-let parser = new XsjsParser(tokenStream);
+let parser = new LiteParser(tokenStream);
 
 // Parse the input, where `compilationUnit` is whatever entry point you defined
-let tree = parser.prog();
+let tree = parser.program();
 
 // Create the visitor
 const visitor = new Visitor();

@@ -44,9 +44,8 @@ import { ParameterClauseSelfContext } from "./LiteParser";
 import { ParameterContext } from "./LiteParser";
 import { FunctionSupportStatementContext } from "./LiteParser";
 import { JudgeCaseStatementContext } from "./LiteParser";
-import { CaseDefaultStatementContext } from "./LiteParser";
-import { CaseExprStatementContext } from "./LiteParser";
 import { CaseStatementContext } from "./LiteParser";
+import { CaseExprStatementContext } from "./LiteParser";
 import { JudgeStatementContext } from "./LiteParser";
 import { JudgeElseStatementContext } from "./LiteParser";
 import { JudgeIfStatementContext } from "./LiteParser";
@@ -113,6 +112,7 @@ import { FunctionExpressionContext } from "./LiteParser";
 import { TupleExpressionContext } from "./LiteParser";
 import { PlusMinusContext } from "./LiteParser";
 import { NegateContext } from "./LiteParser";
+import { BitwiseNotExpressionContext } from "./LiteParser";
 import { LinqContext } from "./LiteParser";
 import { LinqItemContext } from "./LiteParser";
 import { LinqKeywordContext } from "./LiteParser";
@@ -141,6 +141,13 @@ import { TypeBasicContext } from "./LiteParser";
 import { NilExprContext } from "./LiteParser";
 import { BoolExprContext } from "./LiteParser";
 import { JudgeTypeContext } from "./LiteParser";
+import { BitwiseContext } from "./LiteParser";
+import { BitwiseAndContext } from "./LiteParser";
+import { BitwiseOrContext } from "./LiteParser";
+import { BitwiseNotContext } from "./LiteParser";
+import { BitwiseXorContext } from "./LiteParser";
+import { BitwiseLeftShiftContext } from "./LiteParser";
+import { BitwiseRightShiftContext } from "./LiteParser";
 import { JudgeContext } from "./LiteParser";
 import { AssignContext } from "./LiteParser";
 import { AddContext } from "./LiteParser";
@@ -456,11 +463,11 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitJudgeCaseStatement?: (ctx: JudgeCaseStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `LiteParser.caseDefaultStatement`.
+	 * Visit a parse tree produced by `LiteParser.caseStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCaseDefaultStatement?: (ctx: CaseDefaultStatementContext) => Result;
+	visitCaseStatement?: (ctx: CaseStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.caseExprStatement`.
@@ -468,13 +475,6 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitCaseExprStatement?: (ctx: CaseExprStatementContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `LiteParser.caseStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitCaseStatement?: (ctx: CaseStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.judgeStatement`.
@@ -939,6 +939,13 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitNegate?: (ctx: NegateContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseNotExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseNotExpression?: (ctx: BitwiseNotExpressionContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `LiteParser.linq`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1133,6 +1140,55 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitJudgeType?: (ctx: JudgeTypeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwise`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwise?: (ctx: BitwiseContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseAnd`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseAnd?: (ctx: BitwiseAndContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseOr`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseOr?: (ctx: BitwiseOrContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseNot`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseNot?: (ctx: BitwiseNotContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseXor`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseXor?: (ctx: BitwiseXorContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseLeftShift`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseLeftShift?: (ctx: BitwiseLeftShiftContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.bitwiseRightShift`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBitwiseRightShift?: (ctx: BitwiseRightShiftContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.judge`.

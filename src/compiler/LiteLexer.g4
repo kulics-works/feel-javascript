@@ -15,21 +15,21 @@ LinqEquals: 'equals';
 LinqAscending: 'ascending';
 LinqDescending: 'descending';
 
-Pow: '**';
-Root: '//';
-Log: '%%';
+Pow:    '**';
+Root:   '//';
+Log:    '%%';
 
-Add_Equal: '+=';
-Sub_Equal: '-=';
-Mul_Equal: '*=';
-Div_Equal: '/=';
-Mod_Equal: '%=';
-Colon_Equal: ':=';
+Add_Equal:         '+=';
+Sub_Equal:         '-=';
+Mul_Equal:         '*=';
+Div_Equal:         '/=';
+Mod_Equal:         '%=';
+Colon_Equal:       ':=';
 
-Equal_Equal: '==';
-Less_Equal: '<=';
-Greater_Equal: '>=';
-Not_Equal: '><';
+Equal_Equal:        '==';
+Less_Equal:         '<=';
+Greater_Equal:      '>=';
+Not_Equal:          '><';
 
 Dot_Dot_Dot: '...';
 Dot_Dot: '..';
@@ -52,12 +52,12 @@ Greater: '>';
 
 Semi: ';';
 
-Left_Paren: '(';
-Right_Paren: ')';
-Left_Brace: '{';
-Right_Brace: '}';
-Left_Brack: '[';
-Right_Brack: ']';
+Left_Paren:             '(';
+Right_Paren:             ')';
+Left_Brace:             '{';
+Right_Brace:             '}';
+Left_Brack:             '[';
+Right_Brack:             ']';
 
 Colon_Colon: '::';
 Colon: ':';
@@ -70,15 +70,16 @@ Bang: '!';
 
 Wave: '~';
 
-Add: '+';
-Sub: '-';
-Mul: '*';
-Div: '/';
-Mod: '%';
-Slash: '\\';
+Add:    '+';
+Sub:    '-';
+Mul:    '*';
+Div:    '/';
+Mod:    '%';
+Slash:  '\\';
 
-And: '&';
-Or: '|';
+And:    '&';
+Or:     '|';
+Xor:    '^';
 
 TypeI8: 'I8';
 TypeU8: 'U8';
@@ -102,8 +103,8 @@ TrueLiteral: 'True';
 FalseLiteral: 'False';
 UndefinedLiteral: 'Undefined';
 
-NumberLiteral: DIGIT+; // 整数
-fragment DIGIT: [0-9]; // 单个数字
+NumberLiteral: DIGIT+ ; // 整数
+fragment DIGIT: [0-9] ;   // 单个数字
 TextLiteral: '"' ('\\' [btnfr"\\] | .)*? '"'; // 文本
 CharLiteral: '\'' ('\\\'' | '\\' [btnfr\\] | .)*? '\''; // 单字符
 IDPrivate: '_' [a-zA-Z0-9_]+; // 私有标识符
@@ -114,8 +115,8 @@ Big_Big_Comment: '###' .*? '###' -> skip; // 可嵌套注释
 Big_Comment: '##' .*? '##' -> skip; // 可嵌套注释
 Comment: '#' .*? '#' -> skip; // 注释
 
-New_Line: '\n';
+New_Line: '\n'; 
 //WS: (' ' |'\t' |'\n' |'\r' )+ -> skip ;
 
-WS:
-	[ \t]+ -> skip; // 空白， 后面的->skip表示antlr4在分析语言的文本时，符合这个规则的词法将被无视
+WS: [ \t]+ -> skip; // 空白， 后面的->skip表示antlr4在分析语言的文本时，符合这个规则的词法将被无视
+

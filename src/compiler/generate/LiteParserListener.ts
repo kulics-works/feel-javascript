@@ -44,9 +44,8 @@ import { ParameterClauseSelfContext } from "./LiteParser";
 import { ParameterContext } from "./LiteParser";
 import { FunctionSupportStatementContext } from "./LiteParser";
 import { JudgeCaseStatementContext } from "./LiteParser";
-import { CaseDefaultStatementContext } from "./LiteParser";
-import { CaseExprStatementContext } from "./LiteParser";
 import { CaseStatementContext } from "./LiteParser";
+import { CaseExprStatementContext } from "./LiteParser";
 import { JudgeStatementContext } from "./LiteParser";
 import { JudgeElseStatementContext } from "./LiteParser";
 import { JudgeIfStatementContext } from "./LiteParser";
@@ -113,6 +112,7 @@ import { FunctionExpressionContext } from "./LiteParser";
 import { TupleExpressionContext } from "./LiteParser";
 import { PlusMinusContext } from "./LiteParser";
 import { NegateContext } from "./LiteParser";
+import { BitwiseNotExpressionContext } from "./LiteParser";
 import { LinqContext } from "./LiteParser";
 import { LinqItemContext } from "./LiteParser";
 import { LinqKeywordContext } from "./LiteParser";
@@ -141,6 +141,13 @@ import { TypeBasicContext } from "./LiteParser";
 import { NilExprContext } from "./LiteParser";
 import { BoolExprContext } from "./LiteParser";
 import { JudgeTypeContext } from "./LiteParser";
+import { BitwiseContext } from "./LiteParser";
+import { BitwiseAndContext } from "./LiteParser";
+import { BitwiseOrContext } from "./LiteParser";
+import { BitwiseNotContext } from "./LiteParser";
+import { BitwiseXorContext } from "./LiteParser";
+import { BitwiseLeftShiftContext } from "./LiteParser";
+import { BitwiseRightShiftContext } from "./LiteParser";
 import { JudgeContext } from "./LiteParser";
 import { AssignContext } from "./LiteParser";
 import { AddContext } from "./LiteParser";
@@ -617,15 +624,15 @@ export interface LiteParserListener extends ParseTreeListener {
 	exitJudgeCaseStatement?: (ctx: JudgeCaseStatementContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `LiteParser.caseDefaultStatement`.
+	 * Enter a parse tree produced by `LiteParser.caseStatement`.
 	 * @param ctx the parse tree
 	 */
-	enterCaseDefaultStatement?: (ctx: CaseDefaultStatementContext) => void;
+	enterCaseStatement?: (ctx: CaseStatementContext) => void;
 	/**
-	 * Exit a parse tree produced by `LiteParser.caseDefaultStatement`.
+	 * Exit a parse tree produced by `LiteParser.caseStatement`.
 	 * @param ctx the parse tree
 	 */
-	exitCaseDefaultStatement?: (ctx: CaseDefaultStatementContext) => void;
+	exitCaseStatement?: (ctx: CaseStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `LiteParser.caseExprStatement`.
@@ -637,17 +644,6 @@ export interface LiteParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitCaseExprStatement?: (ctx: CaseExprStatementContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `LiteParser.caseStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterCaseStatement?: (ctx: CaseStatementContext) => void;
-	/**
-	 * Exit a parse tree produced by `LiteParser.caseStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitCaseStatement?: (ctx: CaseStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `LiteParser.judgeStatement`.
@@ -1376,6 +1372,17 @@ export interface LiteParserListener extends ParseTreeListener {
 	exitNegate?: (ctx: NegateContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseNotExpression`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseNotExpression?: (ctx: BitwiseNotExpressionContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseNotExpression`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseNotExpression?: (ctx: BitwiseNotExpressionContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `LiteParser.linq`.
 	 * @param ctx the parse tree
 	 */
@@ -1682,6 +1689,83 @@ export interface LiteParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitJudgeType?: (ctx: JudgeTypeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwise`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwise?: (ctx: BitwiseContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwise`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwise?: (ctx: BitwiseContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseAnd`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseAnd?: (ctx: BitwiseAndContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseAnd`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseAnd?: (ctx: BitwiseAndContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseOr`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseOr?: (ctx: BitwiseOrContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseOr`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseOr?: (ctx: BitwiseOrContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseNot`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseNot?: (ctx: BitwiseNotContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseNot`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseNot?: (ctx: BitwiseNotContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseXor`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseXor?: (ctx: BitwiseXorContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseXor`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseXor?: (ctx: BitwiseXorContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseLeftShift`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseLeftShift?: (ctx: BitwiseLeftShiftContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseLeftShift`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseLeftShift?: (ctx: BitwiseLeftShiftContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `LiteParser.bitwiseRightShift`.
+	 * @param ctx the parse tree
+	 */
+	enterBitwiseRightShift?: (ctx: BitwiseRightShiftContext) => void;
+	/**
+	 * Exit a parse tree produced by `LiteParser.bitwiseRightShift`.
+	 * @param ctx the parse tree
+	 */
+	exitBitwiseRightShift?: (ctx: BitwiseRightShiftContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `LiteParser.judge`.

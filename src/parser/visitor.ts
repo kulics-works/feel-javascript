@@ -1,10 +1,10 @@
-import { XsjsVisitor } from "@/compiler/generate/XsjsVisitor";
+import { LiteParserVisitor } from "@/compiler/generate/LiteParserVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
 
 // Extend the AbstractParseTreeVisitor to get default visitor behaviour
-export class Visitor extends AbstractParseTreeVisitor<number>
-  implements XsjsVisitor<number> {
-  defaultResult() {
-    return 0;
-  }
+export class Visitor extends AbstractParseTreeVisitor<any>
+  implements LiteParserVisitor<any> {
+    defaultResult() {
+        return 0;
+    }
 }

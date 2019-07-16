@@ -1,4 +1,4 @@
-## xs 语法
+## Lite 语法
 
 ```
 
@@ -37,10 +37,10 @@ Chr char
 
 Num number
 Str string
-Bl bool
-{} object
-() null
-Ud undefined
+Bool bool
+Any object
+Nil null
+Undefined undefined
 ```
 
 # string template
@@ -55,19 +55,19 @@ Ud undefined
 ```
 2 = 1 + 1
 0 = 1 - 1
-4 = 2 \* 2
+4 = 2 * 2
 2 = 4 / 2
 1 = 3 % 2
-27 = 3 \*\* 3
+27 = 3 ** 3
 3 = 9 // 2
 2 = 4 %% 2 // 4log2
 
-a.And(b) a & b
-a.Or(b) a | b
-a.Xor(b) a ^ b
-a.Not() ~a
-a.Lft(1) a << 1
-a.Rht(1) b >> 1
+a && b a & b
+a || b a | b
+a ^^ b a ^ b
+~~a ~a
+a << 1 a << 1
+a >> 1 b >> 1
 
 a | b a || b
 a & b a && b
@@ -77,16 +77,13 @@ a & b a && b
 # collection
 
 ```
-immutArray: [I32] = [I32]{1, 2, 3}
+immutArray: [:]I32 = [:]I32{1, 2, 3}
 
 array: []I32 = []I32{1,2,3}
 array := {1,2,3}
 
 map: [Str]I32 = [Str]I32{["1"]1, ["2"]2, ["3"]3}
 map := {["1"]1, ["2"]2, ["3"]3}
-
-v := map["1"]
-// (v, ok) := map.["1"]
 ```
 
 # judgement
@@ -110,21 +107,23 @@ if (value) {
 ```
 
 ```
-value ? value {
+value ? v0 {
 
-} value {
+} v1, v2, v3 {
 
 } _ {
 
 }
 
 switch (value) {
-  case value:
-  break
-  case value:
-  break
-  default:
-  break
+	case v0:
+	break
+	case v1:
+	case v2:
+	case v3:
+	break
+	default:
+	break
 }
 
 ```
@@ -161,47 +160,47 @@ for (let id = start; id <= end; id += step) {
 }
 
 @ value {
- <- @
+ 	<- @
 }
 
 while (value) {
- break
+ 	break
 }
 
 @ {
- -> @
+ 	-> @
 }
 
 while (true) {
- continue
+ 	continue
 }
 ```
 
 # function
 
 ```
-id(a:Num, b:Num) -> (c:Num, d:Num) {
-  <- (a, b)
+id(a: Num, b: Num -> c: Num, d: Num) {
+	<- a, b
 }
 (a, b) := id(1, 2)
 
 
 function id(a:Num, b:Numb):[Num,Num]{
-  return [a, b]
+  	return [a, b]
 }
 
-id(fn:(Num)->(Num)) -> () {
-  fn(1)
+id(fn: (Num->Num) ->) {
+	fn(1)
 }
-id({ a -> 1 })
+id{ a -> 1 }
 
 function id(fn:(a:Num)=>Num){
-  fn(1)
+  	fn(1)
 }
 id(a => 1)
 
-id() ~> () {
-  <~ fn2(<~ fn())
+id(~>) {
+  	<~ fn2(<~ fn())
 }
 ```
 
