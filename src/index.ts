@@ -1,8 +1,8 @@
 import { ANTLRInputStream, CommonTokenStream } from "antlr4ts";
 import { LiteLexer } from "./compiler/generate/LiteLexer";
 import { LiteParser } from "./compiler/generate/LiteParser";
+import { LiteLangVisitor } from "./visitor/base";
 
-import { Visitor } from "./parser/visitor";
 // Create the lexer and parser
 const input: string = `
 "demo" {}
@@ -21,7 +21,7 @@ let parser = new LiteParser(tokenStream);
 let tree = parser.program();
 
 // Create the visitor
-const visitor = new Visitor();
+const visitor = new LiteLangVisitor();
 // Use the visitor entry point
 let output = visitor.visit(tree);
 
