@@ -5,7 +5,9 @@ import { LiteLangVisitor } from "./visitor/base";
 
 // Create the lexer and parser
 const input: string = `
-"demo" {}
+"demo" {
+    "./test" test
+}
 
 main(->) {
 
