@@ -23,24 +23,25 @@ let id = value
 # basic types
 
 ```
-I8 sbyte
-I16 short
-I32 int
-I64 long
-U8 byte
-U16 ushort
-U32 uint
-U64 ulong
-F32 float
-F64 double
-Chr char
+i8 sbyte
+i16 short
+i32 int
+i64 long
+u8 byte
+u16 ushort
+u32 uint
+u64 ulong
+f32 float
+f64 double
+chr char
 
-Num number
-Str string
-Bool bool
-Any object
-Nil null
-Undefined undefined
+int number
+num number
+str string
+bool bool
+any object
+nil null
+undef undefined
 ```
 
 # string template
@@ -77,13 +78,15 @@ a & b a && b
 # collection
 
 ```
-immutArray: [:]I32 = [:]I32{1, 2, 3}
+immutArray: [:]num = [:]num{1, 2, 3}
 
-array: []I32 = []I32{1,2,3}
+array: []num = []num{1,2,3}
 array := {1,2,3}
 
-map: [Str]I32 = [Str]I32{["1"]1, ["2"]2, ["3"]3}
+map: [str]num = [str]num{["1"]1, ["2"]2, ["3"]3}
 map := {["1"]1, ["2"]2, ["3"]3}
+
+set: [num] = [num]{[1], [2], [3]}
 ```
 
 # judgement
@@ -116,14 +119,14 @@ value ? v0 {
 }
 
 switch (value) {
-	case v0:
-	break
-	case v1:
-	case v2:
-	case v3:
-	break
-	default:
-	break
+    case v0:
+    break
+    case v1:
+    case v2:
+    case v3:
+    break
+    default:
+    break
 }
 
 ```
@@ -160,47 +163,57 @@ for (let id = start; id <= end; id += step) {
 }
 
 @ value {
- 	<- @
+    <- @
 }
 
 while (value) {
- 	break
+    break
 }
 
 @ {
- 	-> @
+    -> @
 }
 
 while (true) {
- 	continue
+    continue
 }
+```
+
+# type convert
+
+```
+a: Cat = Cat{}
+b: Dog = a:(Dog)
+
+
+let a: Cat = new Cat()
+let b: Dog = a as Dog
 ```
 
 # function
 
 ```
-id(a: Num, b: Num -> c: Num, d: Num) {
-	<- a, b
+id(a: num, b: num -> c: num, d: num) {
+    <- a, b
 }
 (a, b) := id(1, 2)
 
-
-function id(a:Num, b:Numb):[Num,Num]{
-  	return [a, b]
+function id(a:number, b:number):[number,number]{
+    return [a, b]
 }
 
-id(fn: (Num->Num) ->) {
-	fn(1)
+id(fn: (num->num) ->) {
+    fn(1)
 }
 id{ a -> 1 }
 
-function id(fn:(a:Num)=>Num){
-  	fn(1)
+function id(fn:(a:number)=>number){
+    fn(1)
 }
 id(a => 1)
 
 id(~>) {
-  	<~ fn2(<~ fn())
+    <~ fn2(<~ fn())
 }
 ```
 
@@ -210,3 +223,50 @@ type:string,
 content:string,
 feature:any
 }
+
+# struct
+```
+item<T> -> {
+    id: num
+    name: str
+}
+
+me: item<T> -> {
+    get<T>(->v:item) {
+        <- me
+    }
+    set<T>(v:item->) {
+        ...
+    }
+
+    ID(id): num
+
+    ID2(): num {
+        get {
+            <- me.id
+        }
+        set(v) {
+            me.id = v
+        }
+    }
+}
+
+class item<T> {
+    id: number
+    name: string
+
+    get<T>():item {
+        return this
+    }
+
+    set<T>(v:item) {
+        ...
+    }
+    get Id():number{
+        return this.id
+    }
+    set Id(Id:number){
+        this.id = Id
+    }
+}
+```
