@@ -3,19 +3,19 @@
 ```
 
 1
-id: type
+id type
 id = value
 
 let id:type
 id = value
 
 2
-id: type = value
+id type = value
 
 let id:type = value
 
 3
-id := value
+id = value
 
 let id = value
 ```
@@ -80,13 +80,13 @@ a & b a && b
 ```
 immutArray: [:]num = [:]num{1, 2, 3}
 
-array: []num = []num{1,2,3}
-array := {1,2,3}
+array []num = []num{1,2,3}
+array = {1,2,3}
 
-map: [str]num = [str]num{["1"]1, ["2"]2, ["3"]3}
-map := {["1"]1, ["2"]2, ["3"]3}
+map [str]num = [str]num{["1"]1, ["2"]2, ["3"]3}
+map = {["1"]1, ["2"]2, ["3"]3}
 
-set: [num] = [num]{[1], [2], [3]}
+set [num] = [num]{[1], [2], [3]}
 ```
 
 # judgement
@@ -136,10 +136,6 @@ switch (value) {
 ```
 ?(value)
 typeof value
-
-?(:type)
-
-
 ```
 
 # loop
@@ -182,8 +178,8 @@ while (true) {
 # type convert
 
 ```
-a: Cat = Cat{}
-b: Dog = a:(Dog)
+a Cat = Cat{}
+b Dog = a.(Dog)
 
 
 let a: Cat = new Cat()
@@ -193,16 +189,16 @@ let b: Dog = a as Dog
 # function
 
 ```
-id(a: num, b: num -> c: num, d: num) {
+id(a num, b num -> c num, d num) {
     <- a, b
 }
-(a, b) := id(1, 2)
+a, b = id(1, 2)
 
 function id(a:number, b:number):[number,number]{
     return [a, b]
 }
 
-id(fn: (num->num) ->) {
+id(fn (num->num) ->) {
     fn(1)
 }
 id{ a -> 1 }
@@ -217,31 +213,24 @@ id(~>) {
 }
 ```
 
-Result = {
-name:string,
-type:string,
-content:string,
-feature:any
-}
-
 # struct
 ```
 item<T> -> {
-    id: num
-    name: str
+    id num
+    name str
 }
 
-me: item<T> -> {
-    get<T>(->v:item) {
+me item<T> -> {
+    get<T>(->v item) {
         <- me
     }
-    set<T>(v:item->) {
+    set<T>(v item->) {
         ...
     }
 
-    ID(id): num
+    ID(id) num
 
-    ID2(): num {
+    ID2() num {
         get {
             <- me.id
         }
