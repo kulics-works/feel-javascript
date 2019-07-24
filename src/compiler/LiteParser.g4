@@ -63,7 +63,7 @@ includeStatement
 // 包含
 includeStatement: Discard typeType end;
 // 包构造方法
-packageNewStatement: (annotationSupport)? parameterClauseSelf Less Greater left_paren parameterClauseIn right_paren
+packageNewStatement: (annotationSupport)? parameterClauseSelf left_paren parameterClauseIn right_paren
 (left_paren expressionList? right_paren)? left_brace (functionSupportStatement)* right_brace;
 // 定义变量
 packageVariableStatement: (annotationSupport)? id (Equal expression| typeType (Equal expression)?) end;
@@ -123,6 +123,9 @@ functionStatement: id (templateDefine)? left_paren parameterClauseIn t=(Right_Ar
  parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
 // 返回
 returnStatement: Left_Arrow (tupleExpression)? end;
+// 生成器
+yieldReturnStatement: Left_Arrow At tupleExpression end;
+yieldBreakStatement: Left_Arrow At end;
 // 入参
 parameterClauseIn: parameter? (more parameter)*;
 // 出参
@@ -135,6 +138,8 @@ parameter: (annotationSupport)? id typeType (Equal expression)?;
 // 函数支持的语句
 functionSupportStatement:
  returnStatement
+| yieldReturnStatement
+| yieldBreakStatement
 | judgeCaseStatement
 | judgeStatement
 | loopStatement
@@ -145,7 +150,6 @@ functionSupportStatement:
 | loopContinueStatement
 | usingStatement
 | checkStatement
-| reportStatement
 | functionStatement
 | variableStatement
 | variableDeclaredStatement
@@ -171,17 +175,17 @@ judgeIfStatement: Question expression left_brace (functionSupportStatement)* rig
 // else if 判断
 judgeElseIfStatement: expression left_brace (functionSupportStatement)* right_brace;
 // 循环
-loopStatement: iteratorStatement At id left_brace (functionSupportStatement)* right_brace end;
+loopStatement: id At iteratorStatement left_brace (functionSupportStatement)* right_brace end;
 // 集合循环
-loopEachStatement: expression At (Left_Brack id Right_Brack)? id left_brace (functionSupportStatement)* right_brace end;
+loopEachStatement: (Left_Brack id Right_Brack)? id At expression left_brace (functionSupportStatement)* right_brace end;
 // 条件循环
 loopCaseStatement: At expression left_brace (functionSupportStatement)* right_brace end;
 // 无限循环
 loopInfiniteStatement: At left_brace (functionSupportStatement)* right_brace end;
 // 跳出循环
-loopJumpStatement: Left_Arrow At end;
+loopJumpStatement: At Dot_Dot end;
 // 跳出当前循环
-loopContinueStatement: Right_Arrow At end;
+loopContinueStatement: Dot_Dot At end;
 // 检查
 checkStatement: 
 Bang left_brace (functionSupportStatement)* right_brace (checkErrorStatement)* checkFinallyStatment end
@@ -193,8 +197,6 @@ checkErrorStatement: (id|id typeType) left_brace (functionSupportStatement)* rig
 // 最终执行
 checkFinallyStatment: Discard left_brace (functionSupportStatement)* right_brace;
 
-// 报告错误
-reportStatement: Bang left_paren (expression)? right_paren end;
 // 迭代器
 iteratorStatement: Left_Brack expression op=(Less|Less_Equal|Greater|Greater_Equal) expression
  more expression Right_Brack | Left_Brack expression op=(Less|Less_Equal|Greater|Greater_Equal) expression Right_Brack;
@@ -228,7 +230,6 @@ linq // 联合查询
 | primaryExpression
 | callNew // 构造类对象
 | callPkg // 新建包
-| getType // 获取类型
 | callAwait // 异步等待调用
 | list // 列表
 | set // 集合
@@ -247,7 +248,6 @@ linq // 联合查询
 | expression callChannel // 调用通道
 | expression callElement // 访问元素
 | expression callExpression // 链式调用
-| expression judgeType Less typeType Greater // 类型判断表达式
 | expression bitwise expression // 位运算表达式
 | expression judge expression // 判断型表达式
 | expression add expression // 和型表达式
@@ -281,8 +281,6 @@ callElement: Left_Brack (slice | expression) Right_Brack; // 元素调用
 callPkg: typeType left_brace (pkgAssign|listAssign|setAssign|dictionaryAssign)? right_brace; // 新建包
 
 callNew: Less typeType Greater left_paren New_Line? expressionList? New_Line? right_paren; // 构造类对象
-
-getType: Question left_paren typeType right_paren;
 
 typeConversion: Dot left_paren typeType right_paren; // 类型转化
 
@@ -379,6 +377,7 @@ typeAny
 | typeSet
 | typeDictionary
 | typeChannel
+| typeStack
 | typeBasic
 | typePackage
 | typeFunction
@@ -395,6 +394,7 @@ typeList: Left_Brack Right_Brack typeType;
 typeSet: Left_Brack typeType Right_Brack;
 typeDictionary: Left_Brack typeType Right_Brack typeType;
 typeChannel: Left_Brack Right_Arrow Right_Brack typeType;
+typeStack: Left_Brack Xor Right_Brack typeType;
 typePackage: nameSpaceItem (templateCall)? ;
 typeFunction: left_paren typeFunctionParameterClause t=(Right_Arrow|Right_Flow) New_Line* typeFunctionParameterClause right_paren;
 typeAny: TypeAny;
