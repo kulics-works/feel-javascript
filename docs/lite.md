@@ -78,7 +78,7 @@ a & b a && b
 # collection
 
 ```
-immutArray: [:]num = [:]num{1, 2, 3}
+immutArray [:]num = [:]num{1, 2, 3}
 
 array []num = []num{1,2,3}
 array = {1,2,3}
@@ -134,14 +134,14 @@ switch (value) {
 # get type
 
 ```
-?(value)
+typeof<value>()
 typeof value
 ```
 
 # loop
 
 ```
-collection @ id {
+id @ collection {
 
 }
 
@@ -150,7 +150,7 @@ for (let id in collection) {
 }
 
 
-[start <= end, step] @ id {
+id @ [start <= end, step] {
 
 }
 
@@ -159,7 +159,7 @@ for (let id = start; id <= end; id += step) {
 }
 
 @ value {
-    <- @
+    @..
 }
 
 while (value) {
@@ -167,7 +167,7 @@ while (value) {
 }
 
 @ {
-    -> @
+    ..@
 }
 
 while (true) {
