@@ -150,7 +150,7 @@ for (let id in collection) {
 }
 
 
-id @ [start <= end, step] {
+id @ start ..<= end : step {
 
 }
 
