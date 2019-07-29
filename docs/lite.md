@@ -82,11 +82,12 @@ immutArray [:]num = [:]num{1, 2, 3}
 
 array []num = []num{1,2,3}
 array = {1,2,3}
+array.(0) = 2
 
-map [str]num = [str]num{["1"]1, ["2"]2, ["3"]3}
-map = {["1"]1, ["2"]2, ["3"]3}
+map []str:num = []str:num{"1":1, "2":2, "3":3}
+map = {"1":1, "2":2, "3":3}
 
-set [num] = [num]{[1], [2], [3]}
+set []:num = []:num{:1, :2, :3}
 ```
 
 # judgement
@@ -134,7 +135,7 @@ switch (value) {
 # get type
 
 ```
-typeof<value>()
+typeof[value]()
 typeof value
 ```
 
@@ -179,7 +180,7 @@ while (true) {
 
 ```
 a Cat = Cat{}
-b Dog = a.(Dog)
+b Dog = a.[Dog]
 
 
 let a: Cat = new Cat()
@@ -215,16 +216,16 @@ id(~>) {
 
 # struct
 ```
-item<T> -> {
+item[T] -> {
     id num
     name str
 }
 
-me item<T> -> {
-    get<T>(->v item) {
+me item[T] -> {
+    get[T](->v item) {
         <- me
     }
-    set<T>(v item->) {
+    set[T](v item->) {
         ...
     }
 
