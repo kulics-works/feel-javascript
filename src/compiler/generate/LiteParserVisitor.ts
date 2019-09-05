@@ -23,12 +23,12 @@ import { PackageNewStatementContext } from "./LiteParser";
 import { PackageVariableStatementContext } from "./LiteParser";
 import { PackageControlSubStatementContext } from "./LiteParser";
 import { PackageEventStatementContext } from "./LiteParser";
+import { PackageImplementStatementContext } from "./LiteParser";
+import { ImplementNewStatementContext } from "./LiteParser";
 import { ImplementStatementContext } from "./LiteParser";
 import { ImplementSupportStatementContext } from "./LiteParser";
 import { ImplementFunctionStatementContext } from "./LiteParser";
 import { ImplementControlStatementContext } from "./LiteParser";
-import { OverrideStatementContext } from "./LiteParser";
-import { OverrideSupportStatementContext } from "./LiteParser";
 import { OverrideFunctionStatementContext } from "./LiteParser";
 import { OverrideControlStatementContext } from "./LiteParser";
 import { ProtocolStatementContext } from "./LiteParser";
@@ -38,6 +38,8 @@ import { ProtocolControlSubStatementContext } from "./LiteParser";
 import { ProtocolFunctionStatementContext } from "./LiteParser";
 import { FunctionStatementContext } from "./LiteParser";
 import { ReturnStatementContext } from "./LiteParser";
+import { YieldReturnStatementContext } from "./LiteParser";
+import { YieldBreakStatementContext } from "./LiteParser";
 import { ParameterClauseInContext } from "./LiteParser";
 import { ParameterClauseOutContext } from "./LiteParser";
 import { ParameterClauseSelfContext } from "./LiteParser";
@@ -53,20 +55,22 @@ import { JudgeElseIfStatementContext } from "./LiteParser";
 import { LoopStatementContext } from "./LiteParser";
 import { LoopEachStatementContext } from "./LiteParser";
 import { LoopCaseStatementContext } from "./LiteParser";
-import { LoopInfiniteStatementContext } from "./LiteParser";
+import { LoopElseStatementContext } from "./LiteParser";
 import { LoopJumpStatementContext } from "./LiteParser";
 import { LoopContinueStatementContext } from "./LiteParser";
 import { CheckStatementContext } from "./LiteParser";
 import { UsingStatementContext } from "./LiteParser";
 import { CheckErrorStatementContext } from "./LiteParser";
 import { CheckFinallyStatmentContext } from "./LiteParser";
-import { ReportStatementContext } from "./LiteParser";
 import { IteratorStatementContext } from "./LiteParser";
 import { VariableStatementContext } from "./LiteParser";
 import { VariableDeclaredStatementContext } from "./LiteParser";
 import { ChannelAssignStatementContext } from "./LiteParser";
 import { AssignStatementContext } from "./LiteParser";
 import { ExpressionStatementContext } from "./LiteParser";
+import { IdExpressionContext } from "./LiteParser";
+import { IdExprItemContext } from "./LiteParser";
+import { TupleExpressionContext } from "./LiteParser";
 import { PrimaryExpressionContext } from "./LiteParser";
 import { ExpressionContext } from "./LiteParser";
 import { CallExpressionContext } from "./LiteParser";
@@ -82,7 +86,6 @@ import { CallChannelContext } from "./LiteParser";
 import { CallElementContext } from "./LiteParser";
 import { CallPkgContext } from "./LiteParser";
 import { CallNewContext } from "./LiteParser";
-import { GetTypeContext } from "./LiteParser";
 import { TypeConversionContext } from "./LiteParser";
 import { PkgAssignContext } from "./LiteParser";
 import { PkgAssignElementContext } from "./LiteParser";
@@ -109,7 +112,6 @@ import { PkgAnonymousContext } from "./LiteParser";
 import { PkgAnonymousAssignContext } from "./LiteParser";
 import { PkgAnonymousAssignElementContext } from "./LiteParser";
 import { FunctionExpressionContext } from "./LiteParser";
-import { TupleExpressionContext } from "./LiteParser";
 import { PlusMinusContext } from "./LiteParser";
 import { NegateContext } from "./LiteParser";
 import { BitwiseNotExpressionContext } from "./LiteParser";
@@ -120,19 +122,31 @@ import { LinqHeadKeywordContext } from "./LiteParser";
 import { LinqBodyKeywordContext } from "./LiteParser";
 import { StringExpressionContext } from "./LiteParser";
 import { StringExpressionElementContext } from "./LiteParser";
+import { JudgeExpressionContext } from "./LiteParser";
+import { JudgeExpressionElseStatementContext } from "./LiteParser";
+import { JudgeExpressionIfStatementContext } from "./LiteParser";
+import { JudgeExpressionElseIfStatementContext } from "./LiteParser";
+import { JudgeCaseExpressionContext } from "./LiteParser";
+import { CaseExpressionStatementContext } from "./LiteParser";
+import { LoopExpressionContext } from "./LiteParser";
+import { LoopEachExpressionContext } from "./LiteParser";
+import { LoopElseExpressionContext } from "./LiteParser";
+import { CheckExpressionContext } from "./LiteParser";
+import { CheckErrorExpressionContext } from "./LiteParser";
 import { DataStatementContext } from "./LiteParser";
 import { FloatExprContext } from "./LiteParser";
 import { IntegerExprContext } from "./LiteParser";
 import { TypeNotNullContext } from "./LiteParser";
+import { TypeTypeContext } from "./LiteParser";
 import { TypeReferenceContext } from "./LiteParser";
 import { TypeNullableContext } from "./LiteParser";
-import { TypeTypeContext } from "./LiteParser";
 import { TypeTupleContext } from "./LiteParser";
 import { TypeArrayContext } from "./LiteParser";
 import { TypeListContext } from "./LiteParser";
 import { TypeSetContext } from "./LiteParser";
 import { TypeDictionaryContext } from "./LiteParser";
 import { TypeChannelContext } from "./LiteParser";
+import { TypeStackContext } from "./LiteParser";
 import { TypePackageContext } from "./LiteParser";
 import { TypeFunctionContext } from "./LiteParser";
 import { TypeAnyContext } from "./LiteParser";
@@ -316,6 +330,20 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitPackageEventStatement?: (ctx: PackageEventStatementContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `LiteParser.packageImplementStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPackageImplementStatement?: (ctx: PackageImplementStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.implementNewStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitImplementNewStatement?: (ctx: ImplementNewStatementContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `LiteParser.implementStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -342,20 +370,6 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitImplementControlStatement?: (ctx: ImplementControlStatementContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `LiteParser.overrideStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitOverrideStatement?: (ctx: OverrideStatementContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `LiteParser.overrideSupportStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitOverrideSupportStatement?: (ctx: OverrideSupportStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.overrideFunctionStatement`.
@@ -419,6 +433,20 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitReturnStatement?: (ctx: ReturnStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.yieldReturnStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitYieldReturnStatement?: (ctx: YieldReturnStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.yieldBreakStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitYieldBreakStatement?: (ctx: YieldBreakStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.parameterClauseIn`.
@@ -526,11 +554,11 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitLoopCaseStatement?: (ctx: LoopCaseStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `LiteParser.loopInfiniteStatement`.
+	 * Visit a parse tree produced by `LiteParser.loopElseStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitLoopInfiniteStatement?: (ctx: LoopInfiniteStatementContext) => Result;
+	visitLoopElseStatement?: (ctx: LoopElseStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.loopJumpStatement`.
@@ -575,13 +603,6 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitCheckFinallyStatment?: (ctx: CheckFinallyStatmentContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `LiteParser.reportStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitReportStatement?: (ctx: ReportStatementContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by `LiteParser.iteratorStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -622,6 +643,27 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitExpressionStatement?: (ctx: ExpressionStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.idExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIdExpression?: (ctx: IdExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.idExprItem`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIdExprItem?: (ctx: IdExprItemContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.tupleExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTupleExpression?: (ctx: TupleExpressionContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.primaryExpression`.
@@ -727,13 +769,6 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitCallNew?: (ctx: CallNewContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `LiteParser.getType`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitGetType?: (ctx: GetTypeContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.typeConversion`.
@@ -918,13 +953,6 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitFunctionExpression?: (ctx: FunctionExpressionContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `LiteParser.tupleExpression`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitTupleExpression?: (ctx: TupleExpressionContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by `LiteParser.plusMinus`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -995,6 +1023,83 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitStringExpressionElement?: (ctx: StringExpressionElementContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `LiteParser.judgeExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitJudgeExpression?: (ctx: JudgeExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.judgeExpressionElseStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitJudgeExpressionElseStatement?: (ctx: JudgeExpressionElseStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.judgeExpressionIfStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitJudgeExpressionIfStatement?: (ctx: JudgeExpressionIfStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.judgeExpressionElseIfStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitJudgeExpressionElseIfStatement?: (ctx: JudgeExpressionElseIfStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.judgeCaseExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitJudgeCaseExpression?: (ctx: JudgeCaseExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.caseExpressionStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCaseExpressionStatement?: (ctx: CaseExpressionStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.loopExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLoopExpression?: (ctx: LoopExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.loopEachExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLoopEachExpression?: (ctx: LoopEachExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.loopElseExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLoopElseExpression?: (ctx: LoopElseExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.checkExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCheckExpression?: (ctx: CheckExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.checkErrorExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCheckErrorExpression?: (ctx: CheckErrorExpressionContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `LiteParser.dataStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1023,6 +1128,13 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitTypeNotNull?: (ctx: TypeNotNullContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `LiteParser.typeType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeType?: (ctx: TypeTypeContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `LiteParser.typeReference`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1035,13 +1147,6 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitTypeNullable?: (ctx: TypeNullableContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `LiteParser.typeType`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitTypeType?: (ctx: TypeTypeContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.typeTuple`.
@@ -1084,6 +1189,13 @@ export interface LiteParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitTypeChannel?: (ctx: TypeChannelContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `LiteParser.typeStack`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeStack?: (ctx: TypeStackContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `LiteParser.typePackage`.

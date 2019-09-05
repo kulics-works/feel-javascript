@@ -6,10 +6,10 @@ import { LiteLangVisitor } from "./visitor/base";
 // Create the lexer and parser
 const input: string = `
 "demo" {
-    "./test" test
+    test "./test"
 }
 
-main(->) {
+main : (->) {
 
 }
 
