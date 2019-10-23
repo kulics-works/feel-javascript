@@ -1,6 +1,6 @@
 ## 简介
 
-Lite-Typescript，基于[Lite]()极简风格的语法，使用 antlr 实现一个 typescript 版本的语法编译器。
+Lite-Javacript，基于[Lite]()极简风格的语法，使用 antlr 实现一个 javascript 版本的语法编译器。
 
 ## 导航
 
