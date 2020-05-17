@@ -1,10 +1,10 @@
 ## 简介
 
-Lite-Javacript，基于[Lite]()极简风格的语法，使用 antlr 实现一个 javascript 版本的语法编译器。
+Feel-Javacript，基于[Feel]()极简风格的语法，使用 antlr 实现一个 javascript 版本的语法编译器。
 
 ## 导航
 
-- [Lite 语法](/docs/lite.md)
+- [Feel 语法](/docs/feel.md)
 - [antlr 匹配语法](/docs/antlr-match.md)
 
 ## get starting
